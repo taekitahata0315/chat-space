@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#membersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* Ruby version
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* System dependencies
+#userテーブル
+｜Column|Type|Options|
+|------|----|-------|
+|name|string|null: false,|
+|email|text|null: falsee|
+|password|string|null: false|
+|string|null: false|
 
-* Configuration
+### Association
+- has_many :tweets
 
-* Database creation
 
-* Database initialization
+#tweetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text|null: false|
+|text|text|null: false|
 
-* How to run the test suite
+### Association
+- has_many :user
 
-* Services (job queues, cache servers, search engines, etc.)
+#groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
 
-* Deployment instructions
-
-* ...
+### Association
+- has_many :members :though :
+- has_many :user
