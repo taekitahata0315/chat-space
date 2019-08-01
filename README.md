@@ -12,6 +12,7 @@
 - belongs_to :user
 
 #userテーブル
+
 ｜Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,|
@@ -24,6 +25,7 @@
 
 
 #tweetsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
@@ -33,6 +35,7 @@
 - has_many :user
 
 #groupテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
