@@ -19,8 +19,9 @@
 
 
 ### Association
-- has_many :tweets :through :members
+- has_many :tweets
 - has_many :groups, through: :members
+- has_many :members
 
 
 #tweetsテーブル
@@ -44,5 +45,5 @@
 
 ### Association
 - has_many :members 
-- has_many :users :through :members
+- has_many :users, :through: :members
 - has_many :tweets 
