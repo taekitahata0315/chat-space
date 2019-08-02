@@ -4,39 +4,44 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
 
-#userテーブル
+#usersテーブル
+
 ｜Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,|
-|email|text|null: falsee|
-|password|string|null: false|
-|string|null: false|
+|name|string|null: false,index: true|
+
 
 ### Association
-- has_many :tweets
+- has_many :tweets :through :members
 
 
 #tweetsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
-|text|text|null: false|
+|image|string|
+|text|text|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :user
+- belongs_to :user
+- belongs_to :group
 
-#groupテーブル
+#groupsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false,|
 
 ### Association
-- has_many :members :though :
-- has_many :user
+- has_many :members 
+- has_many :users :through :members
+- has_many :tweets :through :members
