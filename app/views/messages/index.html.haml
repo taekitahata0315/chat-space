@@ -1,0 +1,47 @@
+
+.flash-box
+  .wrapper
+    .chat-side
+      .side-header
+        .side-header__box
+          %p.side-header__box__user-name kitahata
+          %ul.side-header__box__menu
+            %li.side-header__box__menu__new-group
+              %a{:href => "/groups/new"}
+                %i.fa.fa-edit
+            %li.side-header__box__menu__edit-user
+              %a{:href => "/users/1348/edit"}
+                %i.fa.fa-cog
+      .groups
+        %a{:href => "/groups/2953/messages"}
+          .group
+            %p.group__group-name ooooooo
+            %p.group__latest-message まだメッセージがありません
+    
+    .chat-main
+      .main-header
+        .main-header__left-box
+          %h2.main-header__left-box__current-group{"data-group_id" => "2953"}
+            ooooooo
+          %ul.main-header__left-box__member-list
+            Member：
+            %li.main-header__left-box__member-list__member kitahata
+        %a{:href => "/groups/2953/edit"}
+          .main-header__edit-btn Edit
+      .messages 
+        .message{"data-message_id" => "7895"}
+          .message__upper-info
+            %p.message__upper-info__talker kitahata
+            %p.message__upper-info__date 2019/08/04(Sun) 19:26:56
+          .message
+            %p.message__text aaaa
+            .img_tag
+
+      .form
+        %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/2953/messages", :enctype => "multipart/form-data", :method => "post"}
+          .input-box
+            %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+            %label.input-box__image{:for => "message_image"}
+              = fa_icon "image"
+              %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+          %input.submit-btn{ "data-disable-with" => "Send",:name => "commit", :type => "submit", :value => "Send"}/
