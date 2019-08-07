@@ -7,13 +7,13 @@
           %p.side-header__box__user-name kitahata
           %ul.side-header__box__menu
             %li.side-header__box__menu__new-group
-              %a{:href => "/groups/new"}
+              =link_to do
                 %i.fa.fa-edit
             %li.side-header__box__menu__edit-user
-              %a{:href => "/users/1348/edit"}
+              = link_to do
                 %i.fa.fa-cog
       .groups
-        %a{:href => "/groups/2953/messages"}
+        =link_to do
           .group
             %p.group__group-name ooooooo
             %p.group__latest-message まだメッセージがありません
@@ -26,7 +26,7 @@
           %ul.main-header__left-box__member-list
             Member：
             %li.main-header__left-box__member-list__member kitahata
-        %a{:href => "/groups/2953/edit"}
+        =link_to "edit", class: "chat-main" do
           .main-header__edit-btn Edit
       .messages 
         .message{"data-message_id" => "7895"}
