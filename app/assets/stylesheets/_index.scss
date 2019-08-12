@@ -18,9 +18,19 @@
     -webkit-font-smoothing: antialissed;
     }
 
-  .flash-box{
+
+.notice{
+  background-color:#38AEF0;
+  color: #fff;
+  text-align: center;
   }
-  .wrapper{
+.alert{
+  background-color: #F35500;
+  color: #fff;
+  text-align: center;
+  } 
+  
+.wrapper{
     font-size: 1rem;
     font-weight: lighter; 
     width: 100vw;
@@ -297,11 +307,10 @@
             right: 10px;
             cursor: pointer;
           
-       
           &__file{
             display: none;
           }
-          }
+        }
           }
 
           .submit-btn{
