@@ -1,7 +1,6 @@
 $(function () {
   function buildHTML(data) {
-    var image
-      data.image.url == null ? image = "" : image = `<img src="${data.image.url}">`
+    var image = data.image.url ? `<img src="${data.image.url}">` : "";
     var html = `<div class="message">
             <div class="message__upper-info">
             <div class="message__upper-info__talker">
