@@ -3,9 +3,10 @@
     .message__upper-info__talker
       = message.user.name
     .message__upper-info__date 
-      =message.crrated_at.strftime("%Y/%m/%d %H:%M")
+      =message.created_at.strftime("%Y/%m/%d %H:%M")
   .message
     - if message.content.present?
       %p.message__text
       =message.content
+      %br
     = image_tag message.image.url, class: 'message__text' if message.image.present?
