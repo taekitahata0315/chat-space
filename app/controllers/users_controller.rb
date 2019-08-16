@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
 
-def  edit
-end
+  def index
+    @users =User.where('name LIKE(?)',"%#{params[:keyword]}%").where.not(id:current_user.id).limit(10)
+    respond_to do |format|
+      format.html{ redirect_to new_group_path}
+      format.json
+    end
+  end
+
+  def  edit
+  end
 
   def update
     if current_user.update(user_params)
