@@ -66,11 +66,11 @@ var html =
   });
 });
 
-$(document).on("click", ".chat-group-user__btn--add", function () {
-  $(this).parent().remove();
+$(document).on("click", ".user-cearch__add", function () {
   var userName = $(this).data('userName');
   var userId =$(this).data('userId');
   AddChatMembers(userName, userId);
+  $(this).parent().remove();
 });
 
 $(document).on('click',".chat-group-user__btn--remove", function() {
