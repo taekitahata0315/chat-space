@@ -20,12 +20,12 @@ function apppendErrMsgToHTML(msg) {
               user_list.append(html);
 }
 
-function AddChatMembers(userName, userId){
+function AddChatMembers(user_name, user_id){
 
 var html =
           `<div class='chat-group-user'>
-              <input name='group[user_ids][]' type='hidden' value='${userId}'>
-                <p class='chat-group-user__name'>${userName}</p>
+              <input name='group[user_ids][]' type='hidden' value='${user_id}'>
+                <p class='chat-group-user__name'>${user_name}</p>
               <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
             </div>`
             $(".chat-group-users ").append(html);
@@ -67,10 +67,10 @@ var html =
 });
 
 $(document).on("click", ".user-cearch__add", function () {
-  var userName = $(this).data('userName');
-  var userId =$(this).data('userId');
-  AddChatMembers(userName, userId);
+  var user_name = $(this).data('user_name');
+  var user_id =$(this).data('user_id');
   $(this).parent().remove();
+  AddChatMembers(user_name, user_id);
 });
 
 $(document).on('click',".chat-group-user__btn--remove", function() {
