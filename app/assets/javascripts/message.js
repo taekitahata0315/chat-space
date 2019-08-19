@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(function(){
 
 $(function () {
   function buildHTML(data) {
@@ -25,7 +25,8 @@ $(function () {
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this). attr('action')
+    var url = $(this).attr('action')
+    console.log(formData);
     $.ajax({
       url: url,
       type: "POST",
@@ -49,7 +50,6 @@ $(function () {
     if(location.pathname.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $(".message:last").data('message-id');
       var group_id = $(".main-header__left-box__current-group").data("group-id");
-      console.log(last_message_id);
     $.ajax({
       url: `/groups/${group_id}/api/messages`,
       type: 'get',
@@ -65,8 +65,8 @@ $(function () {
     });
   })
     .fail(function () {
-      // alert('自動更新に失敗しました');
-      console.log('error');
+      alert('自動更新に失敗しました');
+
     });
   }
 };
