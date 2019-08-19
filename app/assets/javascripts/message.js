@@ -3,6 +3,7 @@ $(function(){
 $(function () {
   function buildHTML(data) {
     var image = data.image.url ? `<img src="${data.image.url}">` : "";
+    console.log(image);
     var html = `<div class="message" data-message-id= "${data.id}">
             <div class="message__upper-info">
             <div class="message__upper-info__talker">
@@ -26,7 +27,6 @@ $(function () {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-    console.log(formData);
     $.ajax({
       url: url,
       type: "POST",
